@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>4択クイズ</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% if question %}
+            <h2 class="question">{{ question.question_text }}</h2>
+            {% if question.remarks %}
+            <p class="remarks">{{ question.remarks|linebreaksbr }}</p>
+        {% endif %}
+
+            {% if result %}
+                <p class="result {% if result == '正解！ 🎉' %}correct{% else %}incorrect{% endif %}">
+                    {{ result }}
+                </p>
+                <p class="explanation"><strong>解説:</strong> {{ explanation|linebreaksbr }}</p>
+
+                <!-- 回答履歴 -->
+                <div class="history">
+                    <h3>回答履歴</h3>
+                    <p>
+                        {% for record in history %}
+                            {% if record.is_correct %}
+                                ⭕
+                            {% else %}
+                                ❌
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p>この問題の正答率: {{ accuracy_rate|floatformat:1 }}%</p>
+                </div>
+
+                <!-- 「今の問題に戻る」ボタン -->
+                <div class="navigation">
+                    <a href="{% url 'quiz' question_id=question.id %}" class="nav-btn">↺ 今の問題を見る</a>
+                </div>
+
+            {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="choices">
+                        {% for choice in choices %}
+                            <label class="choice">
+                                <input type="radio" name="answer" value="{{ choice.choice_text }}"> 
+                                {{ choice.choice_text }}
+                            </label><br>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="submit-btn">回答する</button>
+                </form>
+            {% endif %}
+
+            <div class="navigation">
+                <a href="{% url 'category_list' %}" class="nav-btn">カテゴリ一覧に戻る</a>
+            </div>
+        {% else %}
+            <p class="no-question">クイズがありません。</p>
+        {% endif %}
+    </div>
+</body>
+</html>

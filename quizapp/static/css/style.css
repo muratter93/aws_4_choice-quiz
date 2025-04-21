@@ -1,0 +1,190 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* コンテンツ全体を囲むコンテナ */
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+/* 問題文 */
+.question {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 正解・不正解の表示 */
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.correct {
+    color: #2e8b57; /* 緑 */
+}
+
+.incorrect {
+    color: #d9534f; /* 赤 */
+}
+
+/* 解説のスタイル */
+.explanation {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #eef;
+    border-left: 5px solid #3399ff;
+    text-align: left;
+}
+
+/* 選択肢のスタイル */
+.choices {
+    margin: 15px 0;
+}
+
+.choice {
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.choice:hover {
+    background: #e6e6e6;
+}
+
+/* ボタンスタイル */
+.submit-btn {
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+/* 前後の問題へ移動するボタン */
+.navigation {
+    margin-top: 20px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.nav-btn:hover {
+    background: #218838;
+}
+
+/* 「今の問題に戻る」ボタン */
+.navigation a[href*="↺"] {
+    background: #ff9800;
+}
+
+.navigation a[href*="↺"]:hover {
+    background: #e68900;
+}
+
+/* クイズがない場合のメッセージ */
+.no-question {
+    font-size: 18px;
+    color: red;
+}
+
+/* カテゴリ一覧 */
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.category-list a:hover {
+    color: #0056b3;
+}
+
+/* 問題一覧 */
+.question-list {
+    list-style: none;
+    padding: 0;
+}
+
+.question-list li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.question-list a {
+    text-decoration: none;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.question-list a:hover {
+    color: #218838;
+}
+
+/* 正解・不正解の表示 */
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.correct {
+    color: #2e8b57; /* 緑 */
+}
+
+.incorrect {
+    color: #d9534f; /* 赤 */
+}
+
+/* 解説のスタイル */
+.explanation {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #eef;
+    border-left: 5px solid #3399ff;
+    text-align: left;
+}
+

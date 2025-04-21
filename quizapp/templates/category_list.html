@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>カテゴリ一覧</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>カテゴリ一覧</h2>
+        <ul class="category-list">
+            {% for key, name in categories.items %}
+                <li><a href="{% url 'category_questions' category=key %}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'index' %}" class="nav-btn">問題一覧</a>
+        <a href="{% url 'random_quiz' %}" class="nav-btn random-btn">🎲ランダム問題へ</a>
+    </div>
+</body>
+</html>
